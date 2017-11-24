@@ -1,0 +1,14 @@
+
+<button (click)="goBack()">go back</button>
+<div *ngIf="friend">
+    <h2>Details of {{ friend.name | uppercase }}</h2>
+    <div><span>Emp ID: </span>{{friend.id}}</div>
+    <div><span>Name: </span>{{friend.name}}</div>
+
+    <div>
+        <label>Name:
+          <input [(ngModel)]="friend.name" placeholder="Enter name">
+        </label>
+    </div>
+    <button (click)="save()">save</button>
+</div>

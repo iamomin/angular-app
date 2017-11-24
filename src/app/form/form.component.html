@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>My Form</h1>
+    {{friend | json}}
+    <div [hidden]="submitted">
+        <form (ngSubmit)="onSubmit(friendForm)" #friendForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" name="name" required [(ngModel)]="friend.name" #name="ngModel">
+          </div>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Name is required
+          </div>
+          <button type="submit" [disabled]="!friendForm.form.valid">Submit</button>
+        </form>
+        <div [hidden]="!friendForm.form.valid">
+          {{submitMessage}}
+        </div>
+    </div>
+    <div [hidden]="!submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+          <div class="col-xs-3">Name:</div>
+          <div class="col-xs-9  pull-left">{{ friend.name }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>
