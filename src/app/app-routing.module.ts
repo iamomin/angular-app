@@ -4,6 +4,8 @@ import { FriendsComponent }     from './friends/friends.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { FriendDetailComponent }  from './friend-detail/friend-detail.component';
 import { FormComponent }     from './form/form.component';
+import { ReactiveFormComponent }     from './reactive-form/reactive-form.component';
+import { DynamicFormComponent }     from './dynamic-form/dynamic-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -11,6 +13,8 @@ const routes: Routes = [
   { path: 'friends', component: FriendsComponent },
   { path: 'detail/:id', component: FriendDetailComponent },
   { path: 'form', component: FormComponent },
+  { path: 'reactiveform', component: ReactiveFormComponent },
+  { path: 'dynamicform', component: DynamicFormComponent },
 ];
 
 @NgModule({

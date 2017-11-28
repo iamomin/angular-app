@@ -6,6 +6,7 @@ import { Friend } from '../friend';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
+
 export class FormComponent implements OnInit {
 
   friend: Friend;
@@ -17,8 +18,7 @@ export class FormComponent implements OnInit {
       this.friend = { id: 0, name: '' };
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   onSubmit() {
       this.submitted = true;

@@ -5,10 +5,17 @@
         <form (ngSubmit)="onSubmit(friendForm)" #friendForm="ngForm">
           <div class="form-group">
             <label for="name">Name</label>
-            <input class="form-control" name="name" required [(ngModel)]="friend.name" #name="ngModel">
+            <input class="form-control" name="name" required minlength="4" [(ngModel)]="friend.name" #name="ngModel">
           </div>
-          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-            Name is required
+          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+               class="alert alert-danger">
+               {{name.errors|json}}
+            <div *ngIf="name.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
           </div>
           <button type="submit" [disabled]="!friendForm.form.valid">Submit</button>
         </form>

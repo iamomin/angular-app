@@ -5,12 +5,8 @@
     Welcome to {{title}}!
   </h1>
 </header>
-{{f | json}}
-<input
-  [(ngModel)]="f.name"
-  >
 
-<nav>
+<nav appHighlight>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/friends">Friends</a>
 </nav>
@@ -20,3 +16,11 @@
 <app-messages></app-messages>
 
 <app-version-parent></app-version-parent>
+
+<hr>
+<h3>Two way data binding</h3>
+<p>Change name from below input box</p>
+{{f | json}}
+<input
+  [(ngModel)]="f.name"
+  >
