@@ -7,10 +7,13 @@ import { FriendsComponent }     from './friends.component';
 import { FriendDetailComponent }  from '../friend-detail/friend-detail.component';
 import { FriendService } from '../friend.service';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   imports: [
     FormsModule,
     CommonModule,
+    SharedModule,
     FriendsRoutingModule
   ],
   declarations: [

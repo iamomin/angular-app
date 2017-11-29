@@ -20,6 +20,7 @@ import { VersionChildComponent } from './version-child/version-child.component';
 import { HighlightDirective } from './highlight.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
   imports: [
     BrowserModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     AppRoutingModule,
 
