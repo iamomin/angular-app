@@ -4,12 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgMode
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { FriendsComponent } from './friends/friends.component';
-import { FriendDetailComponent } from './friend-detail/friend-detail.component';
-import { FriendService } from './friend.service';
+import { FriendsModule } from './friends/friends.module';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 
@@ -21,14 +19,11 @@ import { VersionParentComponent } from './version-parent/version-parent.componen
 import { VersionChildComponent } from './version-child/version-child.component';
 import { HighlightDirective } from './highlight.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FriendsComponent,
-    FriendDetailComponent,
     MessagesComponent,
     DashboardComponent,
     FriendSearchComponent,
@@ -37,8 +32,6 @@ import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-fo
     VersionChildComponent,
     HighlightDirective,
     ReactiveFormComponent,
-    DynamicFormComponent,
-    DynamicFormQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -46,12 +39,15 @@ import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-fo
     ReactiveFormsModule,
     AppRoutingModule,
 
+    FriendsModule,
+    DynamicFormModule,
+
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
       )
   ],
-  providers: [ FriendService, MessageService ],
+  providers: [ MessageService ],
   bootstrap: [AppComponent]
 })
 

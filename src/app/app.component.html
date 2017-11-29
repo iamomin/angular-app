@@ -9,18 +9,12 @@
 <nav appHighlight>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/friends">Friends</a>
+  <a routerLink="/form">Template Form</a>
+  <a routerLink="/form/reactive">Reactive From</a>
+  <a routerLink="/form/dynamic">Dynamic From</a>
+  <a routerLink="/version">Version</a>
 </nav>
 
 <router-outlet></router-outlet>
 
 <app-messages></app-messages>
-
-<app-version-parent></app-version-parent>
-
-<hr>
-<h3>Two way data binding</h3>
-<p>Change name from below input box</p>
-{{f | json}}
-<input
-  [(ngModel)]="f.name"
-  >
