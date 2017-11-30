@@ -11,7 +11,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 export class FriendService {
 
-  private friendsUrl = 'api/friends';
+  data: any;
+  private friendsUrl = 'https://jsonplaceholder.typicode.com/users';
   private httpOptions;
 
   constructor(
@@ -62,6 +63,7 @@ export class FriendService {
      * @param result - optional value to return as the observable result
      */
     private handleError<T> (operation = 'operation', result?: T) {
+      console.log('... ERROR');
       return (error: any): Observable<T> => {
 
         // TODO: send the error to remote logging infrastructure

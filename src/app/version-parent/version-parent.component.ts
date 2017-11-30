@@ -22,4 +22,5 @@ export class VersionParentComponent {
     this.major++;
     this.minor = 0;
   }
+
 }

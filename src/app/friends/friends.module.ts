@@ -9,12 +9,21 @@ import { FriendService } from '../friend.service';
 
 import { SharedModule } from '../shared/shared.module';
 
+// import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService }  from '../in-memory-data.service';
+
 @NgModule({
   imports: [
     FormsModule,
     CommonModule,
     SharedModule,
-    FriendsRoutingModule
+    FriendsRoutingModule,
+
+    // HttpClientModule,
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    //   )
   ],
   declarations: [
     FriendsComponent,

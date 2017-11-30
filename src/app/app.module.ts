@@ -7,12 +7,10 @@ import { AppComponent } from './app.component';
 import { FriendsModule } from './friends/friends.module';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { ApiService } from './http/api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 import { FriendSearchComponent } from './friend-search/friend-search.component';
 import { FormComponent } from './form/form.component';
 import { VersionParentComponent } from './version-parent/version-parent.component';
@@ -21,6 +19,7 @@ import { HighlightDirective } from './highlight.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
 import { SharedModule } from './shared/shared.module';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +32,7 @@ import { SharedModule } from './shared/shared.module';
     VersionChildComponent,
     HighlightDirective,
     ReactiveFormComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,13 +44,10 @@ import { SharedModule } from './shared/shared.module';
     FriendsModule,
     DynamicFormModule,
 
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-      )
+    HttpClientModule
   ],
-  providers: [ MessageService ],
-  bootstrap: [AppComponent]
+  providers: [ MessageService, ApiService ],
+  bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }

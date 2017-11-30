@@ -4,6 +4,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { FormComponent }     from './form/form.component';
 import { ReactiveFormComponent }     from './reactive-form/reactive-form.component';
 import { VersionParentComponent } from './version-parent/version-parent.component';
+import { PostsComponent } from './posts/posts.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'form', component: FormComponent },
   { path: 'form/reactive', component: ReactiveFormComponent },
   { path: 'version', component: VersionParentComponent },
+  { path: 'posts', component: PostsComponent },
 ];
 
 @NgModule({
