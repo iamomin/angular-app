@@ -8,22 +8,16 @@ import { ApiService } from '../http/api.service';
 })
 export class PostsComponent implements OnInit {
 
-  posts: Post[];
+  posts: any;
 
   constructor(private api: ApiService) {
     console.log('in version-parent constructor');
   }
 
   ngOnInit(): void {
-    this.api.getPosts().subscribe(data  => {
+    this.api.getPosts().subscribe(data => {
       this.posts = data;
       console.log(this.posts);
     });
   }
-}
-
-export interface Post {
-  id: number,
-  title: string,
-  body: string
 }
