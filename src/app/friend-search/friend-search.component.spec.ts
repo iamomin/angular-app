@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { FriendSearchComponent } from './friend-search.component';
+import { FriendService } from '../friend.service';
+import { MessageService } from '../message.service';
 
 describe('FriendSearchComponent', () => {
   let component: FriendSearchComponent;
@@ -8,7 +12,9 @@ describe('FriendSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FriendSearchComponent ]
+      declarations: [ FriendSearchComponent ],
+      imports: [ RouterModule ],
+      providers: [ HttpClient, HttpHandler, FriendService, MessageService ]
     })
     .compileComponents();
   }));
@@ -22,4 +28,5 @@ describe('FriendSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
