@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 import { FriendsComponent } from './friends.component';
+import { FriendService } from '../friend.service';
+import { MessageService } from '../message.service';
 
 describe('FriendsComponent', () => {
   let component: FriendsComponent;
@@ -8,7 +12,9 @@ describe('FriendsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FriendsComponent ]
+      declarations: [ FriendsComponent ],
+      imports: [ RouterModule ],
+      providers: [ HttpClient, HttpHandler, MessageService, FriendService ],
     })
     .compileComponents();
   }));
