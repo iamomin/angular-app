@@ -29,7 +29,7 @@ export class ApiService {
     console.log('getTimezone');
     lat = lat || 39.6034810;
     long = long || -119.6822510;
-    let URL = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + long + '&timestamp=' + Date.now() '&key=AIzaSyAplVQozgv8tuDYYY0Oz7Z3XoR2c4Q4Oso';
+    let URL = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + long + '&timestamp=' + Date.now() + '&key=AIzaSyAplVQozgv8tuDYYY0Oz7Z3XoR2c4Q4Oso';
     this.http.get(URL).subscribe(data  => {
       console.log(data);
     });
