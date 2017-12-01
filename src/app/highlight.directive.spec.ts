@@ -24,7 +24,7 @@ describe('HighlightDirective', () => {
     expect(directive).toBeTruthy();
   });
 
-  it('hovering over input', () => {
+  it('hovering over div', () => {
       inputEl.triggerEventHandler('mouseenter', null);
       fixture.detectChanges();
       console.log('MOUSE ENTER: ' + inputEl.nativeElement.style.backgroundColor);
