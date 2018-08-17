@@ -2,7 +2,7 @@
     <h1>My Template Form</h1>
     {{friend | json}}
     <div [hidden]="submitted">
-        <form (ngSubmit)="onSubmit(friendForm)" #friendForm="ngForm">
+        <form (ngSubmit)="onSubmit()" #friendForm="ngForm">
           <div class="form-group">
             <label for="name">Name</label>
             <input class="form-control" name="name" required minlength="4" [(ngModel)]="friend.name" #name="ngModel">

@@ -16,10 +16,13 @@ import { FormComponent } from './form/form.component';
 import { VersionParentComponent } from './version-parent/version-parent.component';
 import { VersionChildComponent } from './version-child/version-child.component';
 import { HighlightDirective } from './highlight.directive';
+import { ForbiddenValidatorDirective } from './forbidden-name.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
 import { SharedModule } from './shared/shared.module';
 import { PostsComponent } from './posts/posts.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,11 @@ import { PostsComponent } from './posts/posts.component';
     VersionParentComponent,
     VersionChildComponent,
     HighlightDirective,
+    ForbiddenValidatorDirective,
     ReactiveFormComponent,
     PostsComponent,
+    HeaderComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
